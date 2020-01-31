@@ -13,11 +13,15 @@ app.use(bodyParser.json());
 // --------------------------------------------------------
 //# # # # # # #  # # # # # # # # # # # # # # # # # # # # # # # # # #
 
-app.get('/', function(req, res) {
-    res.json('Hello World')
-});
 
-app.use(require('./routes/usuario'));
+// app.get('/', function(req, res) {
+//     res.json('Hello World')
+// });
+
+// Configuración global de rutas
+
+app.use(require('./routes/index.js'));
+
 
 mongoose.connect(process.env.URLDB, { useNewUrlParser: true, useUnifiedTopology: true },
     (err, res) => {
