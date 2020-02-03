@@ -5,6 +5,8 @@ const port = process.env.PORT = process.env.PORT || 3000
 //# # # # # #  # # # # # # # # # # # # # # # # # # # # #
 
 
+const { OAuth2Client } = require('google-auth-library');
+const client = new OAuth2Client(process.env.CLIENT_ID);
 
 // --- ENTORNO -----------------------------------------
 
@@ -32,6 +34,12 @@ process.env.SEED = process.env.SEED || 'este-es-el-seed-de-desarrollo'
 
 //===== Fecha de EXP =============
 process.env.CADUCIDAD_TOKEN = 60 * 60 * 24 * 30;
+//================================
+//-------------------------------------------------------
+
+
+//===== Google Client ID =========
+process.env.CLIENT_ID = process.env.CLIENT_ID || '1065497464400-qa9l20dblsq7unlh7uobh9vtum5d6qvv.apps.googleusercontent.com';
 //================================
 //-------------------------------------------------------
 
